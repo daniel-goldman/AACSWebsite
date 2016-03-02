@@ -1,0 +1,29 @@
+extends layout
+
+block content
+    h1 #{title}
+    p Ask a question here!  This form adds your question in to the database collection for Questions.
+    form(name='questionForm', method='post' action='/questions/createQuestion')
+        br
+        .formTitle Submit a question
+        br
+        table
+            tr
+                td First name
+                td
+                    input(type='text' name='firstName')
+            tr
+                td Last name (optional)
+                td
+                    input(type='text' name='lastName')
+            tr
+                td Email address
+                td
+                    input(type='text' name='email')
+            tr
+                td Question
+                td
+                    textarea(type='text' name='questions')
+            tr
+                td
+                    input(type='submit', value='Submit')
