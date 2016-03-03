@@ -1,6 +1,7 @@
 extends layout
 
 block content
+    script(src='../javascripts/ajax.js')
     h1 #{title}
     p Ask a question here!  This form adds your question in to the database collection for Questions.
     form(name='questionForm', method='post' action='/questions/createQuestion')
@@ -23,7 +24,10 @@ block content
             tr
                 td Question
                 td
-                    textarea(type='text' name='questions')
+                    textarea(type='text' name='question')
             tr
                 td
                     input(type='submit', value='Submit')
+            tr
+                td
+                    #status

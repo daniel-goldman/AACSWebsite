@@ -1,5 +1,8 @@
 var express = require('express');
 var router = express.Router();
+var db = require('./dbLayer');
+
+var db = new db();
 
 /* GET questions page */
 router.get('/', function(req, res, next) {
@@ -7,7 +10,8 @@ router.get('/', function(req, res, next) {
 });
 
 router.post('/createQuestion', function(req, res) {
-    console.log(req.body);
+    db.addQuestion(req);
+    res.redirect('/questions');
 });
 
 module.exports = router;
