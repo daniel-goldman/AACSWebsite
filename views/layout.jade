@@ -1,27 +1,28 @@
+script(src = 'http://code.jquery.com/jquery-1.11.0.min.js')
+script(src='../javascripts/scripts.js')
+
 doctype
 html
     head
         title= title
         link(rel='stylesheet', href='/stylesheets/style.css')
     body
-        .globalnavContainer
-            #globalnav-links
-                ul
-                    li
-                        a(href='/') Home
-                    li
-                        a(href='/services') Services
-                    li
-                        a(href='/about') About
-                    li
-                        a(href='/facts') Did You Know?
-                    li
-                        a(href='/signup') Join Mailing List
-                    li
-                        a(href='/questions') Ask a question
-                    li
-                        a(href='/admin') Admin
-                    li Updates Page (future)
+        #globalnav-links
+            ul
+                li
+                    a(href='/') Home
+                li
+                    a(href='/services') Services
+                li
+                    a(href='/about') About
+                li
+                    a(href='/facts') Did You Know?
+                li
+                    a(href='/signup') Join Mailing List
+                li
+                    a(href='/questions') Ask a question
+                li
+                    a(href='/admin') Admin
     block content
     footer
         .globalfooterContainer
