@@ -1,3 +1,8 @@
+console.log('running');
+$(document).ready(function () {
+    $('div.mainContent').hide().fadeIn(1000);
+});
+/*
 function createHttpRequest() {
     var httpRequest;
     try { httpRequest = new XMLHttpRequest(); } catch (e) { return null; }
@@ -12,3 +17,4 @@ function createHttpRequest() {
     }
     httpRequest.open('post', '/questions/createQuestion')
 }
+*/
