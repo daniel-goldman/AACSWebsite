@@ -1,4 +1,3 @@
-console.log('running');
 $(document).ready(function () {
     $('div.mainContent').hide().fadeIn(1000);
 });
