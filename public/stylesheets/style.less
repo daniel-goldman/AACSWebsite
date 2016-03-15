@@ -1,7 +1,40 @@
 body {
-  margin: 0;
+  margin: 0px;
   font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
   line-height: 1.5em;
+}
+
+h1 {
+  font: 32px "Lucida Grande", Helvetica, Arial, sans-serif;
+}
+
+.bgImage {
+  position:absolute;
+  z-index:-1;
+  width: 100%;
+}
+
+.index {
+  h1 {
+    font: 40px "Lucida Grande", Helvetica, Arial, sans-serif;
+  }
+  color: white;
+}
+
+.facts {
+
+}
+
+.services {
+  color: white;
+}
+
+.about {
+  color: white;
+}
+
+.signup {
+
 }
 
 textarea {
@@ -9,8 +42,14 @@ textarea {
   height: 60px;
 }
 
+@-webkit-keyframes fadeIn {
+  from { opacity: 0; }
+  to   { opacity: 1; }
+}
+
 .mainContent {
-  margin: 5%;
+  padding: 60px;
+  width: 70%;
 }
 
 td {
@@ -23,11 +62,11 @@ td {
   width: 100%;
   text-align: center;
   background-color: #555;
-//  padding-top: 1px;
-//  padding-bottom: 1px;
 }
 
 #globalnav-links li {
+  @fadeTime: 0.15s;
+  @fadeStyle: cubic-bezier(0.645, 0.045, 0.355, 1);
   display: inline;
   list-style-type: none;
   margin: 1%;
@@ -37,10 +76,10 @@ td {
     color: #ffffff;
     padding: 1%;
     text-decoration: none;
-    opacity: 0.5;
-    transition: opacity .25s ease-in-out;
-    -moz-transition: opacity .25s ease-in-out;
-    -webkit-transition: opacity .25s ease-in-out;
+    opacity: 1;
+    transition: all @fadeTime @fadeStyle;
+    -moz-transition: all @fadeTime @fadeStyle;
+    -webkit-transition: all @fadeTime @fadeStyle;
     &:hover {
       opacity: 1;
       color: fade(#00B7FF, 100%);
@@ -50,15 +89,4 @@ td {
 
 #introduction {
   width: 70%;
-}
-
-.fadeInText {
-  opacity: 0.5;
-  transition: opacity .25s ease-in-out;
-  -moz-transition: opacity .25s ease-in-out;
-  -webkit-transition: opacity .25s ease-in-out;
-  &:hover {
-    opacity: 1;
-    color: fade(#00B7FF, 100%);
-  }
 }

@@ -6,7 +6,10 @@ var db = new db();
 
 /* GET questions page */
 router.get('/', function(req, res, next) {
-    res.render('questions.jade', { title: 'Ask a question' });
+    res.render('questions.jade', {
+        title: 'Ask a question',
+        img_src: '../images/worldinyourhand.jpg'
+    });
 });
 
 router.post('/createQuestion', function(req, res) {

@@ -1,6 +1,18 @@
-$(document).ready(function () {
-    $('div.mainContent').hide().fadeIn(1000);
-});
+function fadeInPage() {
+    $(document).ready(function() {
+        console.log('function running');
+        $('.bgImage').hide();
+        $('.bgImage').fadeIn(800);
+
+        $('h1').hide();
+        $('h1').delay(300).fadeIn(600);
+
+        $('.mainContentAfterHeader').hide();
+        $('.mainContentAfterHeader').delay(450).fadeIn(600);
+    });
+}
+fadeInPage();
+
 /*
 function createHttpRequest() {
     var httpRequest;

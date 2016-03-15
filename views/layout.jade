@@ -1,4 +1,4 @@
-script(src = 'http://code.jquery.com/jquery-1.11.0.min.js')
+script(src = 'https://ajax.googleapis.com/ajax/libs/jquery/1.12.0/jquery.min.js')
 script(src='../javascripts/scripts.js')
 
 doctype
@@ -6,7 +6,7 @@ html
     head
         title= title
         link(rel='stylesheet', href='/stylesheets/style.css')
-    body
+    body(class=page)
         #globalnav-links
             ul
                 li
@@ -23,6 +23,7 @@ html
                     a(href='/questions') Ask a question
                 li
                     a(href='/admin') Admin
+    img(class='bgImage' src=img_src)
     block content
     footer
         .globalfooterContainer
