@@ -1,17 +1,14 @@
-function fadeInPage() {
-    $(document).ready(function() {
-        console.log('function running');
-        $('.bgImage').hide();
-        $('.bgImage').fadeIn(800);
+function questionSubmit() {
+    var req = null;
 
-        $('h1').hide();
-        $('h1').delay(300).fadeIn(600);
+    try { req = new XMLHttpRequest(); } catch (e) { return null; }
+    req.onreadystatechange = function() {
+        if(req.readyState == 4 && req.status == 200) {
 
-        $('.mainContentAfterHeader').hide();
-        $('.mainContentAfterHeader').delay(450).fadeIn(600);
-    });
+        }
+    }
+    req.open('post', '/questions/createQuestion');
 }
-fadeInPage();
 
 /*
 function createHttpRequest() {

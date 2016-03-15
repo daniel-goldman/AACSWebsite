@@ -6,7 +6,7 @@ block content
         .mainContentAfterHeader
             br
             p Ask a question here!  This form adds your question in to the database collection for Questions.
-            form(name='questionForm', method='post' action='/questions/createQuestion')
+            form()
                 .formTitle Submit a question
                 table
                     tr
@@ -24,10 +24,10 @@ block content
                     tr
                         td Question
                         td
-                            textarea(type='text' name='question')
+                            textarea(name='question')
                     tr
                         td
-                            input(type='submit', value='Submit')
+                            input(type='button', value='Submit' onclick='scripts.js')
                     tr
                         td
-                            #status
+                            #questionSubmitStatus
