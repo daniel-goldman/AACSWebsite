@@ -1,0 +1,7 @@
+extends layout
+
+block content
+    .mainContent
+        h1 #{title}
+        .mainContentAfterHeader
+            input(type='button', value='Retrieve Random Question', onclick='callAdmin(\'/admin/retrieveRandomQuestion\')')

@@ -12,7 +12,6 @@ var db = function() {
         email: String,
         question: String
     });
-
     question = mongoose.model('questions', questionSchema);
 
     // check if connection opened successfully
@@ -21,11 +20,10 @@ var db = function() {
         console.log('connection OK');
         console.log('database server running at localhost:3000');
     });
+
+    // add a question to the database
     this.addQuestion = function(req) {
         question.count({ 'question': req.body.question }, function(err, count) {
-            console.log('firstName: ' + req.body.firstName);
-            console.log('question: ' + req.body.question);
-            console.log('count: ' + count);
             // input validation
             if(count === 0) {
                 question.create({
@@ -39,6 +37,18 @@ var db = function() {
             else if(count > 0) {
                 console.log('question already exists');
             }
+        });
+    };
+
+    // retrieve a random question from the database
+    this.retrieveRandomQuestion = function(req) {
+        question.count().exec(function(err, count) {
+            var random = Math.floor(Math.random() * count);
+
+            question.findOne().skip(random).exec(
+                function (err, result) {
+                    return result;
+            });
         });
     };
 }
