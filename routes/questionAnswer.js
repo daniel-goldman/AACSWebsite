@@ -8,8 +8,7 @@ router.get('/', function(req, res, next) {
 
 router.post('/retrieveRandomQuestion', function(req, res) {
     console.log('retrieveRandomQuestion called');
-    var obj = db.retrieveRandomQuestion(req);
-    console.log(obj);
+    console.log(db.retrieveRandomQuestion());
 });
 
 module.exports = router;

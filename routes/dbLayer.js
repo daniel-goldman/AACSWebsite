@@ -2,7 +2,7 @@ var express = require('express');
 var mongoose = require('mongoose');
 var router = express.Router();
 
-/* Interact with database */
+/* Interact with db */
 var db = function() {
     mongoose.connect('mongodb://localhost:27017/Database');
     var db = mongoose.connection;
@@ -18,10 +18,10 @@ var db = function() {
     db.on('error', console.error.bind(console, 'connection error'));
     db.once('open', function() {
         console.log('connection OK');
-        console.log('database server running at localhost:3000');
+        console.log('db server running at localhost:3000');
     });
 
-    // add a question to the database
+    // add a question to the db
     this.addQuestion = function(req) {
         question.count({ 'question': req.body.question }, function(err, count) {
             // input validation
@@ -40,15 +40,14 @@ var db = function() {
         });
     };
 
-    // retrieve a random question from the database
-    this.retrieveRandomQuestion = function(req) {
+    // retrieve a random question from the db
+    this.retrieveRandomQuestion = function() {
         question.count().exec(function(err, count) {
             var random = Math.floor(Math.random() * count);
-
             question.findOne().skip(random).exec(
                 function (err, result) {
                     return result;
-            });
+                });
         });
     };
 }
