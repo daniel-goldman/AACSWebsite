@@ -11,7 +11,6 @@ router.get('/', function(req, res, next) {
 
 router.post('/createQuestion', function(req, res) {
     console.log('createQuestion running');
-    console.log(req);
     db.addQuestion(req);
     res.send('Question sent!');
 });
